@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { HexGrid, Layout, Hexagon, GridGenerator, Pattern } from 'react-hexgrid';
-import './App.css';
+import './MapGenerator.css';
 
-class App extends Component {
+class MapGenerator extends Component {
   render() {
     const hexagons = GridGenerator.rectangle(20, 20);
     const hexagonSize = { x: 2, y: 2 };
 
     return (
-      <div className="App">
-        <h1>Basic example of HexGrid usage.</h1>
+      <div className="MapGenerator">
+        <h1>Map Generator for a hexgrid map</h1>
         <HexGrid width={1200} height={1000} viewBox="-50 -10 100 100">
           <Layout size={hexagonSize}>
             { hexagons.map((hex, i) => <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} fill="tree" />) }
@@ -21,4 +21,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default MapGenerator;

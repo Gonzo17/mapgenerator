@@ -1,24 +1,24 @@
-.App {
+.MapGenerator {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
+.MapGenerator-logo {
+  animation: MapGenerator-logo-spin infinite 20s linear;
   height: 80px;
 }
 
-.App-header {
+.MapGenerator-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
 }
 
-.App-intro {
+.MapGenerator-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
+@keyframes MapGenerator-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
