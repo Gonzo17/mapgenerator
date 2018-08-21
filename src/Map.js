@@ -28,7 +28,7 @@ class Map extends Component {
                     <Layout size={this.state.hexagonSize}>
                         {this.state.hexagons.map((hex, i) => this.createHexagon(hex, i))}
                     </Layout>
-                    <Pattern id="tree" link="https://classroomclipart.com/images/gallery/Clipart/Trees/TN_seasonal-tree-green-summer-clipart-720.jpg" size={this.state.hexagonSize} />
+                    <Pattern id="tree" link="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/48x48/tree.png" size={this.state.hexagonSize} />
                 </HexGrid>
             </div>
         );
