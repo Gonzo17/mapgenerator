@@ -11,7 +11,7 @@ class MapGenerator extends Component {
     return (
       <div className="MapGenerator">
         <h1>Map Generator for a hexgrid map</h1>
-        <Map hexagons={hexagons} hexagonSize={hexagonSize} />  
+        <Map hexagons={hexagons} hexagonSize={hexagonSize} width="30" height="20" />  
       </div>
     );
   }

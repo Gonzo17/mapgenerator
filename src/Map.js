@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HexGrid, Layout, Hexagon, Pattern } from 'react-hexgrid';
+import { HexGrid, Layout, Hexagon, Pattern, Hex } from 'react-hexgrid';
 import './Map.css';
 
 class Map extends Component {
@@ -9,16 +9,39 @@ class Map extends Component {
 
         this.state = {
             hexagons: this.props.hexagons,
-            hexagonSize: this.props.hexagonSize
+            hexagonSize: this.props.hexagonSize,
+            width: this.props.width,
+            height: this.props.height,
+            island: this.randomIsland()
+        }
+    }
+
+    randomIsland() {
+        while(true){
+            var randomq = Math.round(Math.random() * 30);
+            var randomr = Math.round(Math.random() * 30);
+            var randoms = (randomr + randomq) * -1;
+            var randomHex = new Hex(randomq, randomr, randoms);
+            if(this.isIslandAllowed(randomHex)){
+                return randomHex;
+            }
         }
     }
 
     createHexagon(hex, i) {
-        var fill = Math.random() >= 0.5;
-        if (fill) {
+        if (this.isIslandAllowed(hex) && this.isRandomIsland(hex)) {
             return <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} fill="tree" />;
         }
         return <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} />;
+    }
+
+    isRandomIsland(hex) {
+        return hex.q === this.state.island.q && hex.r === this.state.island.r && hex.s === this.state.island.s;
+    }
+
+    isIslandAllowed(hex) {
+        var row = hex.r + (hex.q - (hex.q&1)) / 2;
+        return (hex.q > 1 && hex.q < this.props.width - 2) && (row > 1 && row < this.props.height - 2);
     }
 
     render() {
