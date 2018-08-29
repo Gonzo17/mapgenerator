@@ -1,8 +1,8 @@
+# Map Generator for hexagonal grids
+
+Test it live: https://gonzo17.github.io/mapgenerator/
+
 ## Run it
 ```shell
 npm install && npm start
 ```
-
-## What's inside
-
-Hopefully soon a map generator. :)
